@@ -1,12 +1,12 @@
-# Recomendação de Frete por Confiabilidade (ETA real) — TensorFlow.js
+# Recomendação de Frete por Confiabilidade (ETA real) - TensorFlow.js
 
-Protótipo educacional (Exercício 01 da Pós — Engenharia de IA). Adaptação do
+Protótipo educacional (Exercício 01 da Pós - Engenharia de IA). Adaptação do
 exemplo de aula `exemplo-01-ecommerce-recomendations-z` (Erick Wendel) para o
 domínio de **frete/logística**.
 
 Em vez de recomendar o frete só pelo **preço/prazo da tabela**, o app treina uma
 rede neural (TensorFlow.js, **direto no navegador**) que prevê o **lead time real
-(ETA)** e o **risco de atraso** de cada transportadora — recomendando por
+(ETA)** e o **risco de atraso** de cada transportadora - recomendando por
 **custo x tempo x confiabilidade**, não só pelo menor preço.
 
 ## O que é real e o que é simulado
@@ -15,7 +15,7 @@ rede neural (TensorFlow.js, **direto no navegador**) que prevê o **lead time re
   Maps Distance Matrix API).
 - **Simulado**: transportadoras, preços, prazos de tabela e o histórico de
   entregas usado para treinar o modelo. É um cenário sintético com penalidades de
-  atraso conhecidas (região, sazonalidade, zona rural) — o objetivo é a rede
+  atraso conhecidas (região, sazonalidade, zona rural) - o objetivo é a rede
   neural **aprender esses padrões sozinha**, a partir dos dados, sem que eles
   sejam informados como regra.
 
@@ -50,7 +50,7 @@ chave própria:
    e habilite a **Distance Matrix API**.
 2. Crie uma chave de API e **restrinja por referrer HTTP** (ex.: `localhost:3000/*`)
    para não deixá-la aberta.
-3. Cole a chave em `js/config.js` (gitignorado — nunca é versionado):
+3. Cole a chave em `js/config.js` (gitignorado - nunca é versionado):
 
    ```js
    window.GOOGLE_MAPS_API_KEY = 'sua-chave-aqui';
@@ -61,7 +61,7 @@ tela (não quebra silenciosamente).
 
 ## Uso
 
-O modelo treina ao abrir a página — acompanhe o status, o log de épocas e o
+O modelo treina ao abrir a página - acompanhe o status, o log de épocas e o
 painel do `tfjs-vis` com o gráfico de MAE (abre sozinho no canto da tela).
 Depois, preencha CEP origem/destino, peso, volume e tipo de carga, e clique em
 **Cotar**. Marque "cliente exige pontualidade" para ver a recomendação priorizar
@@ -109,17 +109,17 @@ visto pelo modelo até a avaliação final.
 
 Depois do treino, o app mostra na tela (seção "Avaliação do modelo"):
 
-- **MAE do modelo** — erro médio absoluto (em dias reais) nas entregas de teste.
-- **MAE da tabela estática** — mesmo cálculo usando `prazo_tabela_dias` como
+- **MAE do modelo** - erro médio absoluto (em dias reais) nas entregas de teste.
+- **MAE da tabela estática** - mesmo cálculo usando `prazo_tabela_dias` como
   previsão ingênua, para comparação.
-- **Diferença** — quanto o modelo reduz o erro em relação à tabela estática.
+- **Diferença** - quanto o modelo reduz o erro em relação à tabela estática.
 
 Isso evidencia se o modelo generalizou (aprendeu o padrão oculto do histórico) em
 vez de só decorar o treino.
 
 ## Limitações desta versão
 
-- Cenário 100% sintético — transportadoras, preços e prazos de tabela não
+- Cenário 100% sintético - transportadoras, preços e prazos de tabela não
   correspondem a nenhuma empresa real.
 - Sem persistência do modelo treinado (retreina do zero a cada load de página).
 - Sem testes automatizados formais (há scripts de verificação usados durante o
