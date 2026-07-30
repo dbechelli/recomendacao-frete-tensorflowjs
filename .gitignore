@@ -1,0 +1,17 @@
+node_modules/
+.DS_Store
+*.log
+
+# Gerado por gerar-dados-sinteticos.mjs ou extrair-do-postgres.mjs — este
+# último pode sobrescrever com dados reais de entregas/clientes, então o
+# arquivo nunca deve ir para o histórico do git.
+data/*.json
+
+# Chave da Google Maps API (Distance Matrix). Nunca commitar — use
+# js/config.example.js como modelo.
+js/config.js
+
+# Notas internas do Segundo Cérebro (Obsidian) — não fazem parte do repositório
+# público do exercício.
+CLAUDE.md
+Exercício 01*.md
