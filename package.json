@@ -5,15 +5,11 @@
   "type": "module",
   "scripts": {
     "gerar-dados": "node extract/gerar-dados-sinteticos.mjs 3000",
-    "extrair-postgres": "node extract/extrair-do-postgres.mjs",
     "start": "browser-sync start --server --watch --port 3000"
   },
   "keywords": ["frete", "logistica", "tensorflow", "recommendation", "javascript"],
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^3.0.4"
-  },
-  "optionalDependencies": {
-    "pg": "^8.12.0"
   }
 }

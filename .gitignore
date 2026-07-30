@@ -2,9 +2,8 @@ node_modules/
 .DS_Store
 *.log
 
-# Gerado por gerar-dados-sinteticos.mjs ou extrair-do-postgres.mjs — este
-# último pode sobrescrever com dados reais de entregas/clientes, então o
-# arquivo nunca deve ir para o histórico do git.
+# Gerado por gerar-dados-sinteticos.mjs (dado sintético, regenerável) — nunca
+# deve ir para o histórico do git.
 data/*.json
 
 # Chave da Google Maps API (Distance Matrix). Nunca commitar — use
@@ -15,3 +14,5 @@ js/config.js
 # público do exercício.
 CLAUDE.md
 Exercício 01*.md
+
+extrair-do-postgres.mjs
